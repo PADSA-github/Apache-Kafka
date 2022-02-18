@@ -1,0 +1,16 @@
+{
+"name": "sourceconnector",
+"config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+    "tasks.max": "2",
+    "connection.url": "jdbc:mysql://localhost:3306/kafkaconnect?characterEncoding=UTF-8&serverTimezone=UTC",
+    "connection.user": "root",
+    "connection.password": "root.01",
+    "query":"SELECT * FROM (SELECT tb.id, tb.name, tb.created_at, tb.updated_at FROM timestamp_test tb) timestamp_test",
+    "mode": "timestamp+incrementing",
+    "timestamp.column.name": "updated_at",
+    "incrementing.column.name": "id",
+    "topic.prefix": "last_test",
+    "validate.non.null": false
+}
+}

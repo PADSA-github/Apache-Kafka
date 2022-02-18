@@ -1,0 +1,12 @@
+{
+"name": "sinkconnector",
+"config": {
+"connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+"tasks.max": "2",
+"topics": "last_test",
+"connection.url": "jdbc:mysql://localhost:3306/sinkconnect?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false",
+"connection.user": "root",
+"connection.password": "root.01",
+"update.mode": "update"
+}
+}
